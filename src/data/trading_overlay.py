@@ -312,7 +312,7 @@ class Trading_Overlay:
             self.special_text = font_special.render("No enough money!",True,(0,0,0))
             self.special_text_number = 120
     def sell_monster(self, index:int, price:int):
-        if len(scene_manager._scenes["game"].game_manager.bag._monsters_data) > 1:
+        if len(scene_manager._scenes["game"].game_manager.bag._monsters_data)-len(self.player_sold_monster) > 1:
             self.player_sold_monster.append(index)
             self.player_sold_monster = sorted(self.player_sold_monster)
             self.player_sold_monster_delete_list = []
